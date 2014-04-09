@@ -26,6 +26,7 @@
     IBOutlet UIButton*buttonBomb;
     
     
+    
     NSInteger currentSecond;
     
 }
@@ -70,7 +71,6 @@
 }
 
 -(void)startBomb:(NSURL*)targetUrl duration:(NSInteger)duration density:(NSInteger)density{
-
     
     [self gcdAsiGroupRequest:targetUrl duration:duration density:density];
     return;
@@ -91,10 +91,13 @@
     
     dispatch_queue_t queue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_group_t group=dispatch_group_create();
-    @autoreleasepool {
+   
 
-        for (NSInteger requestIndex=0; requestIndex<density;requestIndex++) {
-            dispatch_group_async(group, queue, ^{
+    for (NSInteger requestIndex=0; requestIndex<density;requestIndex++) {
+            
+        
+        dispatch_group_async(group, queue, ^{
+            @autoreleasepool {
                 NSData*data=[NSData dataWithContentsOfURL:targetUrl];
                 if (nil!=data) {
                     NSString*dataString=[[NSString alloc]initWithData:data encoding:NSASCIIStringEncoding];
@@ -109,10 +112,12 @@
                     });
                 }
 
-                
-            });
-        }
+
+            }});
+
     }
+    
+
         
     
     

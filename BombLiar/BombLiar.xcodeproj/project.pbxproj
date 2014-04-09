@@ -36,6 +36,8 @@
 		9D27992618E90F0700881CEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D27992418E90F0700881CEB /* InfoPlist.strings */; };
 		9D27992818E90F0700881CEB /* BombLiarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27992718E90F0700881CEB /* BombLiarTests.m */; };
 		9D27993418E9105F00881CEB /* BombViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27993318E9105F00881CEB /* BombViewController.m */; };
+		9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D084E18F5338600DDE531 /* TargetTableViewController.m */; };
+		9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085118F5383500DDE531 /* TargetDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,10 @@
 		9D27992718E90F0700881CEB /* BombLiarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BombLiarTests.m; sourceTree = "<group>"; };
 		9D27993218E9105F00881CEB /* BombViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BombViewController.h; path = BombLiar/ViewController/BombViewController.h; sourceTree = "<group>"; };
 		9D27993318E9105F00881CEB /* BombViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BombViewController.m; path = BombLiar/ViewController/BombViewController.m; sourceTree = "<group>"; };
+		9D9D084D18F5338600DDE531 /* TargetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetTableViewController.h; path = BombLiar/ViewController/TargetTableViewController.h; sourceTree = "<group>"; };
+		9D9D084E18F5338600DDE531 /* TargetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetTableViewController.m; path = BombLiar/ViewController/TargetTableViewController.m; sourceTree = "<group>"; };
+		9D9D085018F5383500DDE531 /* TargetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetDetailViewController.h; path = BombLiar/ViewController/TargetDetailViewController.h; sourceTree = "<group>"; };
+		9D9D085118F5383500DDE531 /* TargetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetDetailViewController.m; path = BombLiar/ViewController/TargetDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,10 @@
 				9D27993318E9105F00881CEB /* BombViewController.m */,
 				9D27716418EAB323006985A4 /* ResponseTestViewController.h */,
 				9D27716518EAB323006985A4 /* ResponseTestViewController.m */,
+				9D9D084D18F5338600DDE531 /* TargetTableViewController.h */,
+				9D9D084E18F5338600DDE531 /* TargetTableViewController.m */,
+				9D9D085018F5383500DDE531 /* TargetDetailViewController.h */,
+				9D9D085118F5383500DDE531 /* TargetDetailViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -364,7 +374,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */,
 				9D27715018E96A97006985A4 /* ASIDataCompressor.m in Sources */,
+				9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */,
 				9D27990A18E90F0700881CEB /* AppDelegate.m in Sources */,
 				9D27715418E96A97006985A4 /* ASIHTTPRequest.m in Sources */,
 				9D27714F18E96A97006985A4 /* ASIAuthenticationDialog.m in Sources */,
@@ -506,7 +518,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BombLiar/BombLiar-Prefix.pch";
 				INFOPLIST_FILE = "BombLiar/BombLiar-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -523,7 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BombLiar/BombLiar-Prefix.pch";
 				INFOPLIST_FILE = "BombLiar/BombLiar-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

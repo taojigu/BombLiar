@@ -5,3 +5,5 @@
 
 
 #define RealTargetURLString @"http://uuu.okgj.net.cn/Template/top/juhui/?id=q11"
+
+#define WifiDetectURLString @"http://www.163.com"

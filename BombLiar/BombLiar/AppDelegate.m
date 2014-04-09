@@ -7,12 +7,22 @@
 //
 
 #import "AppDelegate.h"
+#import "Reachability.h"
+#import "ConstConfig.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+    Reachability*curReach=[Reachability reachabilityForInternetConnection];
+    
+    if([curReach currentReachabilityStatus]!=NotReachable){
+        NSLog(@"Should not run under 3G");
+       // return NO;
+    }
+    
     return YES;
 }
 							

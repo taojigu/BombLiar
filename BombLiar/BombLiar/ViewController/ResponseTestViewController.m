@@ -8,13 +8,22 @@
 
 #import "ResponseTestViewController.h"
 #import "ConstConfig.h"
+#import "AsiHttpRequest.h"
 
 @interface ResponseTestViewController (){
     @private
     IBOutlet UILabel*labelTargetUrl;
     IBOutlet UILabel*labelResult;
+    IBOutlet UIView*chartView;
+    
+    NSMutableArray*resultBuffer;
+    NSTimer* testTimer;
+    
 }
 
+
+-(IBAction)testButtonClicked:(id)sender;
+-(IBAction)autoTestButtonClicked:(id)sender;
 
 @end
 
@@ -27,6 +36,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        resultBuffer=[[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -36,6 +46,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     labelTargetUrl.text=RealTargetURLString;
+    
+    [self initCustomViews];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,23 +67,60 @@
 }
 */
 
+-(void)asiSyncTest{
+    dispatch_queue_t mainQueue=dispatch_get_main_queue();
+    dispatch_async(mainQueue, ^{
+        
+        NSTimeInterval time=[NSDate timeIntervalSinceReferenceDate];
+        NSURL *testUrl=[NSURL URLWithString:labelTargetUrl.text];
+        ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:testUrl];
+        [request startSynchronous];
+        NSString*resultString=request.responseString;
+        if (0!=[resultString length]) {
+            NSTimeInterval endTime=[NSDate timeIntervalSinceReferenceDate];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                labelResult.text=[NSString stringWithFormat:@"%f-%@",endTime-time,resultString];
+            });
+        }
+        else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                labelResult.text=@"Failed";
+            });
+        }
+    });
+
+    
+}
+
+
 #pragma mark action messages
 -(IBAction)testButtonClicked:(id)sender{
+    
+    
+    
+    [self asiSyncTest];
+    return;
     dispatch_queue_t testQueue=dispatch_queue_create("testQueue", nil);
     dispatch_queue_t mainQueue=dispatch_get_main_queue();
     //__weak ResponseTestViewController* weakSelf=self;
     dispatch_async(mainQueue, ^{
-    
+        
         NSTimeInterval time=[NSDate timeIntervalSinceReferenceDate];
-
+        
+        
+        
         NSURL *testUrl=[NSURL URLWithString:labelTargetUrl.text];
+        ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:testUrl];
+        [request startSynchronous];
         NSData*data=[NSData dataWithContentsOfURL:testUrl];
         if (nil!=data) {
             NSTimeInterval endTime=[NSDate timeIntervalSinceReferenceDate];
             NSString*dataString=[[NSString alloc]initWithData:data encoding:NSASCIIStringEncoding];
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                labelResult.text=[NSString stringWithFormat:@"%f-%@",endTime-time,dataString];
+                labelResult.text=[NSString stringWithFormat:@"%f",endTime-time];
             });
         }
         else{
@@ -81,10 +130,17 @@
         }
     });
 }
+-(IBAction)autoTestButtonClicked:(id)sender{
+    
+}
+
 
 #pragma mark private messages
 
 -(void)startTest{
+    
+}
+-(void)initCustomViews{
     
 }
 
