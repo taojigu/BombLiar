@@ -8,17 +8,26 @@
 
 #import "TargetTableViewController.h"
 #import "TargetDetailViewController.h"
-@interface TargetTableViewController ()
+#import "ASIHTTPRequest.h"
+#import "ElementsContainer.h"
+#import "TargetPageParser.h"
+#import "RequestStringUtlity.h"
+
+
+@interface TargetTableViewController ()<ASIHTTPRequestDelegate,ASICacheDelegate>
 
 @end
 
 @implementation TargetTableViewController
+
+@synthesize targetContainer;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.targetContainer=[[ElementsContainer alloc]init];
     }
     return self;
 }
@@ -27,6 +36,7 @@
 {
     [super viewDidLoad];
     
+    [self reloadTargetPage:0];
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -123,6 +133,38 @@
     // Pass the selected object to the new view controller.
     TargetDetailViewController*dvc=(TargetDetailViewController*)[segue destinationViewController];
     dvc.titleName=@"Hello";
+}
+
+#pragma mark -- AsiHttpRequestDelegate messages
+
+-(void)requestFinished:(ASIHTTPRequest *)request{
+    
+    NSData*data=request.responseData;
+    TargetPageParser*parser=[[TargetPageParser alloc]init];
+    ElementsContainer*resultPage=[parser parse:data];
+    self.targetContainer.pageIndex=resultPage.pageIndex;
+    [self.targetContainer.elementArray addObjectsFromArray:resultPage.elementArray];
+    [self.tableView reloadData];
+}
+-(void)requestFailed:(ASIHTTPRequest *)request{
+    NSLog(@"Failed Request From %@",request.url);
+}
+
+#pragma mark -- private messages
+
+-(void)reloadTargetPage:(NSInteger)pageIndex pageSize:(NSInteger)pageSize{
+
+    NSString*urlString=[RequestStringUtlity targetPageReuqustUrlString:pageIndex pageSize:pageSize];
+    NSURL*url=[NSURL URLWithString:urlString];
+    
+    ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:url usingCache:self andCachePolicy:ASIUseDefaultCachePolicy];
+    request.delegate=self;
+    [request startAsynchronous];
+                            
+                        
+}
+-(void)reloadTargetPage:(NSInteger)pageIndex{
+    [self reloadTargetPage:pageIndex pageSize:12];
 }
 
 

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ElementsContainer;
+@interface TargetTableViewController : UITableViewController{
+    
+}
 
-@interface TargetTableViewController : UITableViewController
 
+@property(nonatomic,retain)ElementsContainer*targetContainer;
 @end

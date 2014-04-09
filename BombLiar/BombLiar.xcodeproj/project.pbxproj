@@ -38,6 +38,10 @@
 		9D27993418E9105F00881CEB /* BombViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27993318E9105F00881CEB /* BombViewController.m */; };
 		9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D084E18F5338600DDE531 /* TargetTableViewController.m */; };
 		9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085118F5383500DDE531 /* TargetDetailViewController.m */; };
+		9D9D085518F53D4D00DDE531 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085418F53D4D00DDE531 /* Target.m */; };
+		9D9D085918F5417700DDE531 /* ElementsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085818F5417700DDE531 /* ElementsContainer.m */; };
+		9D9D085C18F5458100DDE531 /* RequestStringUtlity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085B18F5458100DDE531 /* RequestStringUtlity.m */; };
+		9D9D086018F54D9500DDE531 /* TargetPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085F18F54D9500DDE531 /* TargetPageParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,14 @@
 		9D9D084E18F5338600DDE531 /* TargetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetTableViewController.m; path = BombLiar/ViewController/TargetTableViewController.m; sourceTree = "<group>"; };
 		9D9D085018F5383500DDE531 /* TargetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetDetailViewController.h; path = BombLiar/ViewController/TargetDetailViewController.h; sourceTree = "<group>"; };
 		9D9D085118F5383500DDE531 /* TargetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetDetailViewController.m; path = BombLiar/ViewController/TargetDetailViewController.m; sourceTree = "<group>"; };
+		9D9D085318F53D4D00DDE531 /* Target.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Target.h; path = BombLiar/Model/Target.h; sourceTree = "<group>"; };
+		9D9D085418F53D4D00DDE531 /* Target.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Target.m; path = BombLiar/Model/Target.m; sourceTree = "<group>"; };
+		9D9D085718F5417700DDE531 /* ElementsContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ElementsContainer.h; path = BombLiar/Model/ElementsContainer.h; sourceTree = "<group>"; };
+		9D9D085818F5417700DDE531 /* ElementsContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ElementsContainer.m; path = BombLiar/Model/ElementsContainer.m; sourceTree = "<group>"; };
+		9D9D085A18F5458100DDE531 /* RequestStringUtlity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestStringUtlity.h; path = BombLiar/Utility/RequestStringUtlity.h; sourceTree = "<group>"; };
+		9D9D085B18F5458100DDE531 /* RequestStringUtlity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestStringUtlity.m; path = BombLiar/Utility/RequestStringUtlity.m; sourceTree = "<group>"; };
+		9D9D085E18F54D9500DDE531 /* TargetPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetPageParser.h; path = BombLiar/Model/TargetPageParser.h; sourceTree = "<group>"; };
+		9D9D085F18F54D9500DDE531 /* TargetPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetPageParser.m; path = BombLiar/Model/TargetPageParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +195,8 @@
 		9D2798ED18E90F0700881CEB = {
 			isa = PBXGroup;
 			children = (
+				9D9D085D18F5458900DDE531 /* Utility */,
+				9D9D085618F5402100DDE531 /* Model */,
 				9D27716718EABB9A006985A4 /* Config */,
 				9D27713918E9671B006985A4 /* ThirdPart */,
 				9D27993118E9102100881CEB /* ViewController */,
@@ -272,6 +286,28 @@
 				9D9D085118F5383500DDE531 /* TargetDetailViewController.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9D9D085618F5402100DDE531 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9D9D085718F5417700DDE531 /* ElementsContainer.h */,
+				9D9D085818F5417700DDE531 /* ElementsContainer.m */,
+				9D9D085318F53D4D00DDE531 /* Target.h */,
+				9D9D085418F53D4D00DDE531 /* Target.m */,
+				9D9D085E18F54D9500DDE531 /* TargetPageParser.h */,
+				9D9D085F18F54D9500DDE531 /* TargetPageParser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9D9D085D18F5458900DDE531 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9D9D085A18F5458100DDE531 /* RequestStringUtlity.h */,
+				9D9D085B18F5458100DDE531 /* RequestStringUtlity.m */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,14 +415,18 @@
 				9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */,
 				9D27990A18E90F0700881CEB /* AppDelegate.m in Sources */,
 				9D27715418E96A97006985A4 /* ASIHTTPRequest.m in Sources */,
+				9D9D085C18F5458100DDE531 /* RequestStringUtlity.m in Sources */,
 				9D27714F18E96A97006985A4 /* ASIAuthenticationDialog.m in Sources */,
 				9D27715318E96A97006985A4 /* ASIFormDataRequest.m in Sources */,
 				9D27990618E90F0700881CEB /* main.m in Sources */,
 				9D27715518E96A97006985A4 /* ASIInputStream.m in Sources */,
 				9D27993418E9105F00881CEB /* BombViewController.m in Sources */,
+				9D9D085918F5417700DDE531 /* ElementsContainer.m in Sources */,
+				9D9D085518F53D4D00DDE531 /* Target.m in Sources */,
 				9D27715618E96A97006985A4 /* ASINetworkQueue.m in Sources */,
 				9D27715118E96A97006985A4 /* ASIDataDecompressor.m in Sources */,
 				9D27715918E96CAA006985A4 /* Reachability.m in Sources */,
+				9D9D086018F54D9500DDE531 /* TargetPageParser.m in Sources */,
 				9D27716618EAB323006985A4 /* ResponseTestViewController.m in Sources */,
 				9D27715218E96A97006985A4 /* ASIDownloadCache.m in Sources */,
 			);
