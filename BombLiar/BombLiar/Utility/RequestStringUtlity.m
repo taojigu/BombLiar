@@ -12,7 +12,7 @@
 
 +(NSString*)targetPageReuqustUrlString:(NSInteger)pageIndex pageSize:(NSInteger)pageSize{
     
-    return @"http://www.163.coom";
+    return @"http://www.baidu.com";
 }
 
 @end

@@ -17,6 +17,7 @@
 @property(nonatomic,strong)NSString*name;
 @property(nonatomic,strong)NSString*urlString;
 @property(nonatomic,strong)NSString*introduction;
+@property(nonatomic,strong)NSString*detailText;
 
 +(Target*)fakeTarget:(NSInteger)targetIndex;
 

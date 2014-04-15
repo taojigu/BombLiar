@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Target;
+
 @interface TargetDetailViewController : UIViewController{
     
 }
 
-@property(nonatomic,strong)NSString*titleName;
+@property(nonatomic,strong)Target*target;
 
 @end

@@ -42,6 +42,9 @@
 		9D9D085918F5417700DDE531 /* ElementsContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085818F5417700DDE531 /* ElementsContainer.m */; };
 		9D9D085C18F5458100DDE531 /* RequestStringUtlity.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085B18F5458100DDE531 /* RequestStringUtlity.m */; };
 		9D9D086018F54D9500DDE531 /* TargetPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085F18F54D9500DDE531 /* TargetPageParser.m */; };
+		9D9D086518F6422200DDE531 /* TargetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D086418F6422200DDE531 /* TargetCell.m */; };
+		9D9D086918F68AF000DDE531 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D086818F68AF000DDE531 /* HMSegmentedControl.m */; };
+		9D9D086C18F6A86400DDE531 /* LiarWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D086B18F6A86400DDE531 /* LiarWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +119,12 @@
 		9D9D085B18F5458100DDE531 /* RequestStringUtlity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestStringUtlity.m; path = BombLiar/Utility/RequestStringUtlity.m; sourceTree = "<group>"; };
 		9D9D085E18F54D9500DDE531 /* TargetPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetPageParser.h; path = BombLiar/Model/TargetPageParser.h; sourceTree = "<group>"; };
 		9D9D085F18F54D9500DDE531 /* TargetPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetPageParser.m; path = BombLiar/Model/TargetPageParser.m; sourceTree = "<group>"; };
+		9D9D086318F6422200DDE531 /* TargetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetCell.h; path = BombLiar/View/Cell/TargetCell.h; sourceTree = "<group>"; };
+		9D9D086418F6422200DDE531 /* TargetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetCell.m; path = BombLiar/View/Cell/TargetCell.m; sourceTree = "<group>"; };
+		9D9D086718F68AF000DDE531 /* HMSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMSegmentedControl.h; path = BombLiar/View/CustomView/HMSegmentedControl.h; sourceTree = "<group>"; };
+		9D9D086818F68AF000DDE531 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMSegmentedControl.m; path = BombLiar/View/CustomView/HMSegmentedControl.m; sourceTree = "<group>"; };
+		9D9D086A18F6A86400DDE531 /* LiarWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiarWebViewController.h; path = BombLiar/ViewController/LiarWebViewController.h; sourceTree = "<group>"; };
+		9D9D086B18F6A86400DDE531 /* LiarWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiarWebViewController.m; path = BombLiar/ViewController/LiarWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +204,7 @@
 		9D2798ED18E90F0700881CEB = {
 			isa = PBXGroup;
 			children = (
+				9D9D086118F641E900DDE531 /* View */,
 				9D9D085D18F5458900DDE531 /* Utility */,
 				9D9D085618F5402100DDE531 /* Model */,
 				9D27716718EABB9A006985A4 /* Config */,
@@ -284,6 +294,8 @@
 				9D9D084E18F5338600DDE531 /* TargetTableViewController.m */,
 				9D9D085018F5383500DDE531 /* TargetDetailViewController.h */,
 				9D9D085118F5383500DDE531 /* TargetDetailViewController.m */,
+				9D9D086A18F6A86400DDE531 /* LiarWebViewController.h */,
+				9D9D086B18F6A86400DDE531 /* LiarWebViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -308,6 +320,33 @@
 				9D9D085B18F5458100DDE531 /* RequestStringUtlity.m */,
 			);
 			name = Utility;
+			sourceTree = "<group>";
+		};
+		9D9D086118F641E900DDE531 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D9D086618F68A9C00DDE531 /* CustomView */,
+				9D9D086218F641F100DDE531 /* Cell */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9D9D086218F641F100DDE531 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9D9D086318F6422200DDE531 /* TargetCell.h */,
+				9D9D086418F6422200DDE531 /* TargetCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		9D9D086618F68A9C00DDE531 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				9D9D086718F68AF000DDE531 /* HMSegmentedControl.h */,
+				9D9D086818F68AF000DDE531 /* HMSegmentedControl.m */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +452,7 @@
 				9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */,
 				9D27715018E96A97006985A4 /* ASIDataCompressor.m in Sources */,
 				9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */,
+				9D9D086918F68AF000DDE531 /* HMSegmentedControl.m in Sources */,
 				9D27990A18E90F0700881CEB /* AppDelegate.m in Sources */,
 				9D27715418E96A97006985A4 /* ASIHTTPRequest.m in Sources */,
 				9D9D085C18F5458100DDE531 /* RequestStringUtlity.m in Sources */,
@@ -422,8 +462,10 @@
 				9D27715518E96A97006985A4 /* ASIInputStream.m in Sources */,
 				9D27993418E9105F00881CEB /* BombViewController.m in Sources */,
 				9D9D085918F5417700DDE531 /* ElementsContainer.m in Sources */,
+				9D9D086C18F6A86400DDE531 /* LiarWebViewController.m in Sources */,
 				9D9D085518F53D4D00DDE531 /* Target.m in Sources */,
 				9D27715618E96A97006985A4 /* ASINetworkQueue.m in Sources */,
+				9D9D086518F6422200DDE531 /* TargetCell.m in Sources */,
 				9D27715118E96A97006985A4 /* ASIDataDecompressor.m in Sources */,
 				9D27715918E96CAA006985A4 /* Reachability.m in Sources */,
 				9D9D086018F54D9500DDE531 /* TargetPageParser.m in Sources */,

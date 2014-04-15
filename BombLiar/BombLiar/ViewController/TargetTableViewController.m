@@ -12,9 +12,11 @@
 #import "ElementsContainer.h"
 #import "TargetPageParser.h"
 #import "RequestStringUtlity.h"
+#import "Target.h"
+#import "TargetCell.h"
 
 
-@interface TargetTableViewController ()<ASIHTTPRequestDelegate,ASICacheDelegate>
+@interface TargetTableViewController ()<ASIHTTPRequestDelegate>
 
 @end
 
@@ -22,9 +24,9 @@
 
 @synthesize targetContainer;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    self=[super initWithCoder:aDecoder];
     if (self) {
         // Custom initialization
         self.targetContainer=[[ElementsContainer alloc]init];
@@ -61,15 +63,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.targetContainer.elementArray count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TargetCell" forIndexPath:indexPath];
+    TargetCell *cell = (TargetCell*)[tableView dequeueReusableCellWithIdentifier:@"TargetCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    Target*target=[self.targetContainer.elementArray objectAtIndex:indexPath.row];
+    cell.nameLabel.text=target.name;
+    cell.introductionLabel.text=target.introduction;
+
     
     return cell;
 }
@@ -119,9 +125,6 @@
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-}
 
 
 #pragma mark - Navigation
@@ -132,7 +135,11 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     TargetDetailViewController*dvc=(TargetDetailViewController*)[segue destinationViewController];
-    dvc.titleName=@"Hello";
+    NSIndexPath*indexPath=[self.tableView indexPathForSelectedRow];
+    Target*target=[self.targetContainer.elementArray objectAtIndex:indexPath.row];
+    dvc.target=target;
+    
+
 }
 
 #pragma mark -- AsiHttpRequestDelegate messages
@@ -157,7 +164,7 @@
     NSString*urlString=[RequestStringUtlity targetPageReuqustUrlString:pageIndex pageSize:pageSize];
     NSURL*url=[NSURL URLWithString:urlString];
     
-    ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:url usingCache:self andCachePolicy:ASIUseDefaultCachePolicy];
+    ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:url];
     request.delegate=self;
     [request startAsynchronous];
                             

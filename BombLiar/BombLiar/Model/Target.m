@@ -14,9 +14,16 @@
 @synthesize name;
 @synthesize urlString;
 @synthesize introduction;
+@synthesize detailText;
 
 +(Target*)fakeTarget:(NSInteger)targetIndex{
     Target*result=[[Target alloc]init];
+    
+    result.targetId=[NSString stringWithFormat:@"t%i",targetIndex];
+    result.name=SampleTargetName;
+    result.urlString=RealTargetURLString;
+    result.introduction=SampleTargetIntroduction;
+    result.detailText=[NSString stringWithFormat:@"The detail text of %@",result.name];
     
     return result;
 }

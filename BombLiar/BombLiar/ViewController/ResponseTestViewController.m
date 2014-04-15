@@ -10,6 +10,8 @@
 #import "ConstConfig.h"
 #import "AsiHttpRequest.h"
 
+
+
 @interface ResponseTestViewController (){
     @private
     IBOutlet UILabel*labelTargetUrl;
