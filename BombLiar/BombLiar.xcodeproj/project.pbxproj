@@ -45,6 +45,13 @@
 		9D9D086518F6422200DDE531 /* TargetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D086418F6422200DDE531 /* TargetCell.m */; };
 		9D9D086918F68AF000DDE531 /* HMSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D086818F68AF000DDE531 /* HMSegmentedControl.m */; };
 		9D9D086C18F6A86400DDE531 /* LiarWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D086B18F6A86400DDE531 /* LiarWebViewController.m */; };
+		9D9D086E18FD183700DDE531 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9D086D18FD183600DDE531 /* QuartzCore.framework */; };
+		9D9D087218FD256600DDE531 /* LiarWeb1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D087018FD256600DDE531 /* LiarWeb1ViewController.m */; };
+		9D9D087318FD256600DDE531 /* LiarWeb1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D9D087118FD256600DDE531 /* LiarWeb1ViewController.xib */; };
+		9D9D09051905267F00DDE531 /* iPhone4Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9D09031905267F00DDE531 /* iPhone4Main.storyboard */; };
+		9D9D090C1906033E00DDE531 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D09071906033E00DDE531 /* InfoView.m */; };
+		9D9D090D1906033E00DDE531 /* LineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D09091906033E00DDE531 /* LineChartView.m */; };
+		9D9D090E1906033E00DDE531 /* UIKit+DrawingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D090B1906033E00DDE531 /* UIKit+DrawingHelpers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +132,17 @@
 		9D9D086818F68AF000DDE531 /* HMSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMSegmentedControl.m; path = BombLiar/View/CustomView/HMSegmentedControl.m; sourceTree = "<group>"; };
 		9D9D086A18F6A86400DDE531 /* LiarWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiarWebViewController.h; path = BombLiar/ViewController/LiarWebViewController.h; sourceTree = "<group>"; };
 		9D9D086B18F6A86400DDE531 /* LiarWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiarWebViewController.m; path = BombLiar/ViewController/LiarWebViewController.m; sourceTree = "<group>"; };
+		9D9D086D18FD183600DDE531 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9D9D086F18FD256600DDE531 /* LiarWeb1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LiarWeb1ViewController.h; path = BombLiar/ViewController/LiarWeb1ViewController.h; sourceTree = "<group>"; };
+		9D9D087018FD256600DDE531 /* LiarWeb1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LiarWeb1ViewController.m; path = BombLiar/ViewController/LiarWeb1ViewController.m; sourceTree = "<group>"; };
+		9D9D087118FD256600DDE531 /* LiarWeb1ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LiarWeb1ViewController.xib; path = BombLiar/ViewController/LiarWeb1ViewController.xib; sourceTree = "<group>"; };
+		9D9D09041905267F00DDE531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/iPhone4Main.storyboard; sourceTree = "<group>"; };
+		9D9D09061906033E00DDE531 /* InfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoView.h; path = BombLiar/View/CustomView/InfoView.h; sourceTree = "<group>"; };
+		9D9D09071906033E00DDE531 /* InfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoView.m; path = BombLiar/View/CustomView/InfoView.m; sourceTree = "<group>"; };
+		9D9D09081906033E00DDE531 /* LineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineChartView.h; path = BombLiar/View/CustomView/LineChartView.h; sourceTree = "<group>"; };
+		9D9D09091906033E00DDE531 /* LineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartView.m; path = BombLiar/View/CustomView/LineChartView.m; sourceTree = "<group>"; };
+		9D9D090A1906033E00DDE531 /* UIKit+DrawingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIKit+DrawingHelpers.h"; path = "BombLiar/View/CustomView/UIKit+DrawingHelpers.h"; sourceTree = "<group>"; };
+		9D9D090B1906033E00DDE531 /* UIKit+DrawingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIKit+DrawingHelpers.m"; path = "BombLiar/View/CustomView/UIKit+DrawingHelpers.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +150,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D9D086E18FD183700DDE531 /* QuartzCore.framework in Frameworks */,
 				9D27716318E96D10006985A4 /* MobileCoreServices.framework in Frameworks */,
 				9D27716118E96D0A006985A4 /* CFNetwork.framework in Frameworks */,
 				9D27715F18E96D04006985A4 /* libxml2.2.dylib in Frameworks */,
@@ -229,6 +248,7 @@
 		9D2798F818E90F0700881CEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D9D086D18FD183600DDE531 /* QuartzCore.framework */,
 				9D27716218E96D10006985A4 /* MobileCoreServices.framework */,
 				9D27716018E96D0A006985A4 /* CFNetwork.framework */,
 				9D27715E18E96D04006985A4 /* libxml2.2.dylib */,
@@ -245,6 +265,7 @@
 		9D2798FF18E90F0700881CEB /* BombLiar */ = {
 			isa = PBXGroup;
 			children = (
+				9D9D09031905267F00DDE531 /* iPhone4Main.storyboard */,
 				9D27990818E90F0700881CEB /* AppDelegate.h */,
 				9D27990918E90F0700881CEB /* AppDelegate.m */,
 				9D27990B18E90F0700881CEB /* Main.storyboard */,
@@ -296,6 +317,9 @@
 				9D9D085118F5383500DDE531 /* TargetDetailViewController.m */,
 				9D9D086A18F6A86400DDE531 /* LiarWebViewController.h */,
 				9D9D086B18F6A86400DDE531 /* LiarWebViewController.m */,
+				9D9D086F18FD256600DDE531 /* LiarWeb1ViewController.h */,
+				9D9D087018FD256600DDE531 /* LiarWeb1ViewController.m */,
+				9D9D087118FD256600DDE531 /* LiarWeb1ViewController.xib */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -343,6 +367,12 @@
 		9D9D086618F68A9C00DDE531 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				9D9D09061906033E00DDE531 /* InfoView.h */,
+				9D9D09071906033E00DDE531 /* InfoView.m */,
+				9D9D09081906033E00DDE531 /* LineChartView.h */,
+				9D9D09091906033E00DDE531 /* LineChartView.m */,
+				9D9D090A1906033E00DDE531 /* UIKit+DrawingHelpers.h */,
+				9D9D090B1906033E00DDE531 /* UIKit+DrawingHelpers.m */,
 				9D9D086718F68AF000DDE531 /* HMSegmentedControl.h */,
 				9D9D086818F68AF000DDE531 /* HMSegmentedControl.m */,
 			);
@@ -429,8 +459,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D27991518E90F0700881CEB /* Images.xcassets in Resources */,
+				9D9D087318FD256600DDE531 /* LiarWeb1ViewController.xib in Resources */,
 				9D27990418E90F0700881CEB /* InfoPlist.strings in Resources */,
 				9D27990D18E90F0700881CEB /* Main.storyboard in Resources */,
+				9D9D09051905267F00DDE531 /* iPhone4Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,14 +492,18 @@
 				9D27715318E96A97006985A4 /* ASIFormDataRequest.m in Sources */,
 				9D27990618E90F0700881CEB /* main.m in Sources */,
 				9D27715518E96A97006985A4 /* ASIInputStream.m in Sources */,
+				9D9D090D1906033E00DDE531 /* LineChartView.m in Sources */,
 				9D27993418E9105F00881CEB /* BombViewController.m in Sources */,
 				9D9D085918F5417700DDE531 /* ElementsContainer.m in Sources */,
 				9D9D086C18F6A86400DDE531 /* LiarWebViewController.m in Sources */,
 				9D9D085518F53D4D00DDE531 /* Target.m in Sources */,
 				9D27715618E96A97006985A4 /* ASINetworkQueue.m in Sources */,
+				9D9D090E1906033E00DDE531 /* UIKit+DrawingHelpers.m in Sources */,
 				9D9D086518F6422200DDE531 /* TargetCell.m in Sources */,
 				9D27715118E96A97006985A4 /* ASIDataDecompressor.m in Sources */,
 				9D27715918E96CAA006985A4 /* Reachability.m in Sources */,
+				9D9D087218FD256600DDE531 /* LiarWeb1ViewController.m in Sources */,
+				9D9D090C1906033E00DDE531 /* InfoView.m in Sources */,
 				9D9D086018F54D9500DDE531 /* TargetPageParser.m in Sources */,
 				9D27716618EAB323006985A4 /* ResponseTestViewController.m in Sources */,
 				9D27715218E96A97006985A4 /* ASIDownloadCache.m in Sources */,
@@ -515,6 +551,14 @@
 				9D27992518E90F0700881CEB /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9D9D09031905267F00DDE531 /* iPhone4Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D9D09041905267F00DDE531 /* Base */,
+			);
+			name = iPhone4Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

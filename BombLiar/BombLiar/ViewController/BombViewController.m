@@ -56,7 +56,7 @@
  
     currentSecond++;
   
-    tfDuration.text=[NSString stringWithFormat:@"%i",currentSecond];
+    tfDuration.text=[NSString stringWithFormat:@"%ld",(long)currentSecond];
     [self startBomb];
 
 }
@@ -149,7 +149,7 @@
         NSData*data=[NSData dataWithContentsOfURL:targetUrl];
         if (nil!=data) {
             NSString*dataString=[[NSString alloc]initWithData:data encoding:NSASCIIStringEncoding];
-            NSLog(@"The request %i reuslt is %@",requestIndex,dataString);
+            NSLog(@"The request %li reuslt is %@",(long)requestIndex,dataString);
             
         }
         else{

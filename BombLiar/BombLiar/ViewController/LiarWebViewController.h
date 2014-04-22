@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Target;
+@interface LiarWebViewController : UIViewController{
+    
+}
 
-@interface LiarWebViewController : UIViewController
-
+@property(nonatomic,strong)Target*target;
 @end

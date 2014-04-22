@@ -19,7 +19,7 @@
 +(Target*)fakeTarget:(NSInteger)targetIndex{
     Target*result=[[Target alloc]init];
     
-    result.targetId=[NSString stringWithFormat:@"t%i",targetIndex];
+    result.targetId=[NSString stringWithFormat:@"t%ld",(long)targetIndex];
     result.name=SampleTargetName;
     result.urlString=RealTargetURLString;
     result.introduction=SampleTargetIntroduction;

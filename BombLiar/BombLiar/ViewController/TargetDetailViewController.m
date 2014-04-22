@@ -9,9 +9,12 @@
 #import "TargetDetailViewController.h"
 #import "HMSegmentedControl.h"
 #import "Target.h"
+#import <QuartzCore/QuartzCore.h>
+#import "LiarWebViewController.h"
+#import "LiarWeb1ViewController.h"
 
-#define BombIndex 0
-#define IntroductionIndex 1
+#define BombIndex 1
+#define IntroductionIndex 0
 
 
 @interface TargetDetailViewController (){
@@ -19,7 +22,9 @@
     IBOutlet UIView*introductionView;
     IBOutlet UIView*bombView;
     IBOutlet UIView*segmentedBackgroundView;
+    IBOutlet UITableViewCell*liarWebCell;
     HMSegmentedControl*segmentControl;
+    
 }
 
 -(IBAction)liarWebCellTapped:(UITapGestureRecognizer*)recognizer;
@@ -43,6 +48,20 @@
     self=[super initWithCoder:aDecoder];
     [self initCustomViews];
     return self;
+}
+
+-(void)loadView{
+    [super loadView];
+    
+    liarWebCell.selectionStyle=UITableViewCellSelectionStyleGray;
+    liarWebCell.backgroundColor=[UIColor clearColor];
+    liarWebCell.layer.cornerRadius=8;
+    liarWebCell.layer.borderWidth=2;
+    liarWebCell.layer.borderColor=[UIColor blackColor].CGColor;
+    UITapGestureRecognizer*tapGesuture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(liarWebCellTapped:)];
+    [liarWebCell addGestureRecognizer:tapGesuture];
+    
+
 }
 
 - (void)viewDidLoad
@@ -73,6 +92,9 @@
 #pragma mark -- action messages
 
 -(IBAction)liarWebCellTapped:(UITapGestureRecognizer*)recognizer{
+    LiarWeb1ViewController*lwvc=[[LiarWeb1ViewController alloc]init];
+    lwvc.target=self.target;
+    [self.navigationController pushViewController:lwvc animated:YES];
     
 }
 
@@ -107,6 +129,7 @@
 -(void)layoutCustomViews{
     
     segmentControl.frame=segmentedBackgroundView.bounds;
+    segmentControl.selectedIndex=IntroductionIndex;
     [segmentedBackgroundView addSubview:segmentControl];
     
 }

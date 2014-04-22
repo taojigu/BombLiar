@@ -7,18 +7,25 @@
 //
 
 #import "LiarWebViewController.h"
+#import "Target.h"
 
-@interface LiarWebViewController ()
+@interface LiarWebViewController (){
+    @private
+    IBOutlet UIWebView*webView;
+}
 
 @end
 
 @implementation LiarWebViewController
+
+@synthesize target;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -29,6 +36,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.title=self.target.name;
+    
+    NSURL*url=[NSURL URLWithString:self.target.urlString];
+
+    [webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
 - (void)didReceiveMemoryWarning

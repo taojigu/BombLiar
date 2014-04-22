@@ -7,12 +7,22 @@
 //
 
 #import "LiarWeb1ViewController.h"
+#import "Target.h"
+#import "AsiHttpRequest.h"
 
-@interface LiarWeb1ViewController ()
+@interface LiarWeb1ViewController ()<ASIHTTPRequestDelegate>{
+    
+    @private
+    IBOutlet UIWebView*webView;
+    
+}
 
 @end
 
 @implementation LiarWeb1ViewController
+
+@synthesize target;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,12 +37,31 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.title=self.target.name;
+ 
+    ASIHTTPRequest*request=[ASIHTTPRequest requestWithURL:[NSURL URLWithString:self.target.urlString]];
+    request.delegate=self;
+    [request startAsynchronous];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark -- delegate messages
+
+-(void)requestFinished:(ASIHTTPRequest *)request{
+    
+    [webView loadHTMLString:[request responseString] baseURL:nil];
+    
+}
+-(void)requestFailed:(ASIHTTPRequest *)request{
+    NSLog(@"%@ failed",request.url);
 }
 
 @end
