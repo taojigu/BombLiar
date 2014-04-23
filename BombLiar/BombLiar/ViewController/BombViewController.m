@@ -117,15 +117,11 @@
 
     }
     
-
-        
-    
-    
 }
 -(void)gcdAsiRequest:(NSURL*)targetUrl duration:(NSInteger)duration requestIndex:(NSInteger)requestIndex{
     
     
-    NSString*queueName=[NSString stringWithFormat:@"AsiRequestQueue_%i_%i",duration,requestIndex];
+    NSString*queueName=[NSString stringWithFormat:@"AsiRequestQueue_%li_%li",(long)duration,(long)requestIndex];
     const char*charQueue=[queueName cStringUsingEncoding:NSASCIIStringEncoding];
     dispatch_queue_t queue=dispatch_queue_create(charQueue, nil);
     dispatch_async(queue, ^{
@@ -142,7 +138,7 @@
 }
 
 -(void)gcdDataRequest:(NSURL*)targetUrl duration:(NSInteger)duration requestIndex:(NSInteger)requestIndex{
-    NSString*queueName=[NSString stringWithFormat:@"DataRequestQueue_%i_%i",duration,requestIndex];
+    NSString*queueName=[NSString stringWithFormat:@"DataRequestQueue_%li_%li",(long)duration,(long)requestIndex];
     const char*charQueue=[queueName cStringUsingEncoding:NSASCIIStringEncoding];
     dispatch_queue_t queue=dispatch_queue_create(charQueue, nil);
     dispatch_async(queue, ^{
@@ -153,7 +149,7 @@
             
         }
         else{
-            NSLog(@"Request %i Failed",requestIndex);
+            NSLog(@"Request %li Failed",(long)requestIndex);
         }
     });
     
