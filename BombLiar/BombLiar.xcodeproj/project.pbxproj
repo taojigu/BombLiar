@@ -52,6 +52,7 @@
 		9D9D090C1906033E00DDE531 /* InfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D09071906033E00DDE531 /* InfoView.m */; };
 		9D9D090D1906033E00DDE531 /* LineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D09091906033E00DDE531 /* LineChartView.m */; };
 		9D9D090E1906033E00DDE531 /* UIKit+DrawingHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D090B1906033E00DDE531 /* UIKit+DrawingHelpers.m */; };
+		9D9D09111908B69500DDE531 /* BombSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D09101908B69500DDE531 /* BombSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,9 @@
 		9D9D09091906033E00DDE531 /* LineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineChartView.m; path = BombLiar/View/CustomView/LineChartView.m; sourceTree = "<group>"; };
 		9D9D090A1906033E00DDE531 /* UIKit+DrawingHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIKit+DrawingHelpers.h"; path = "BombLiar/View/CustomView/UIKit+DrawingHelpers.h"; sourceTree = "<group>"; };
 		9D9D090B1906033E00DDE531 /* UIKit+DrawingHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIKit+DrawingHelpers.m"; path = "BombLiar/View/CustomView/UIKit+DrawingHelpers.m"; sourceTree = "<group>"; };
+		9D9D090F1908B69500DDE531 /* BombSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BombSettingViewController.h; path = BombLiar/ViewController/BombSettingViewController.h; sourceTree = "<group>"; };
+		9D9D09101908B69500DDE531 /* BombSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BombSettingViewController.m; path = BombLiar/ViewController/BombSettingViewController.m; sourceTree = "<group>"; };
+		9D9D09121908BCF600DDE531 /* KeyConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeyConfig.h; path = BombLiar/Config/KeyConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				9D27716818EABBD2006985A4 /* ConstConfig.h */,
+				9D9D09121908BCF600DDE531 /* KeyConfig.h */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -320,6 +325,8 @@
 				9D9D086F18FD256600DDE531 /* LiarWeb1ViewController.h */,
 				9D9D087018FD256600DDE531 /* LiarWeb1ViewController.m */,
 				9D9D087118FD256600DDE531 /* LiarWeb1ViewController.xib */,
+				9D9D090F1908B69500DDE531 /* BombSettingViewController.h */,
+				9D9D09101908B69500DDE531 /* BombSettingViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -482,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */,
+				9D9D09111908B69500DDE531 /* BombSettingViewController.m in Sources */,
 				9D27715018E96A97006985A4 /* ASIDataCompressor.m in Sources */,
 				9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */,
 				9D9D086918F68AF000DDE531 /* HMSegmentedControl.m in Sources */,

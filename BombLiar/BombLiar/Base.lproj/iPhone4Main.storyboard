@@ -129,7 +129,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBG-dO-v2Q">
-                                        <rect key="frame" x="74" y="269" width="156" height="33"/>
+                                        <rect key="frame" x="35" y="278" width="250" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -158,6 +158,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="vtb-ri-aNe">
                         <barButtonItem key="backBarButtonItem" title="列表" id="shp-35-4TQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Setting" id="9Wc-gf-ko0">
+                            <connections>
+                                <segue destination="Lgw-mH-baG" kind="modal" id="nmG-m5-loY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -173,6 +178,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Yx-Kg-Yf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-920" y="-1101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mzK-G8-arS">
+            <objects>
+                <navigationController definesPresentationContext="YES" modalTransitionStyle="flipHorizontal" id="Lgw-mH-baG" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4ac-eM-Z4n">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Cc-3C-ZPR" kind="relationship" relationship="rootViewController" id="ucs-uk-cRZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kwU-2Z-ESH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-509" y="-1136"/>
+        </scene>
+        <!--Bomb Setting View Controller - 轰炸设置-->
+        <scene sceneID="bD2-U4-fgR">
+            <objects>
+                <viewController id="7Cc-3C-ZPR" customClass="BombSettingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GRb-IP-yI3"/>
+                        <viewControllerLayoutGuide type="bottom" id="X1m-UE-tKd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sRX-Uk-f7v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="密度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IoK-Rz-9iq">
+                                <rect key="frame" x="13" y="108" width="97" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EB6-9k-Sk3">
+                                <rect key="frame" x="130" y="111" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7Cc-3C-ZPR" id="vtd-l7-lnp"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="轰炸设置" id="iT2-3T-J7Q">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="kxb-01-42c"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="OZU-uX-UTP">
+                            <connections>
+                                <action selector="navigateBack:" destination="7Cc-3C-ZPR" id="HA5-pV-wP0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="densityTextField" destination="EB6-9k-Sk3" id="3Tw-4Y-ewB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5iZ-dq-WEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47" y="-1251"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -23,6 +23,8 @@
        // return NO;
     }
     
+    [self checkDefaultSettings];
+    
     return YES;
 }
 							
@@ -53,4 +55,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+#pragma mark -- private messages
+
+-(void)checkDefaultSettings{
+    NSInteger density=[[NSUserDefaults standardUserDefaults] integerForKey:DefaultSettingDensityKey];
+    if (0==density) {
+        density=100;
+        [[NSUserDefaults standardUserDefaults]setInteger:density forKey:DefaultSettingDensityKey];
+    }
+}
 @end

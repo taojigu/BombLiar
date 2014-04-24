@@ -15,3 +15,4 @@
 #define TargetRequestURLString @"http://www.163.com"
 
 //#define VooleTargetURLString @"http://userauthtestlt.voole.com/Service.do?action=query&uid=107737&oemid=138&hid=a683c364cb640000000000000000000000000000&mid=81590708&sid=1&fid=72724f3eaeb10cb25fbf99e625c4c543&version=v1.0"
+

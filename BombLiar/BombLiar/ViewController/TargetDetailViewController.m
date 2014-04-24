@@ -32,6 +32,8 @@
     IBOutlet UILabel*bombStatusLabel;
     IBOutlet LineChartView*lineChartView;
     HMSegmentedControl*segmentControl;
+    NSInteger bombSeconds;
+    NSInteger finishedBombSecond;
 
 }
 
@@ -136,6 +138,8 @@
         btn.selected=YES;
         //[self pauseBomb];
         self.bombTimer.fireDate=[NSDate date];
+        bombSeconds=0;
+        finishedBombSecond=0;
     }
 }
 
@@ -153,7 +157,7 @@
 }
 
 -(void)timerFiredAction:(NSTimer*)timer{
-    
+    bombSeconds++;
     dispatch_queue_t queue=dispatch_queue_create("timeFired", DISPATCH_QUEUE_PRIORITY_DEFAULT);
     dispatch_async(queue, ^{[self startBomb];});
     
@@ -184,7 +188,8 @@
 }
 
 -(void)startBomb{
-    [self gcdAsiGroupRequest:[NSURL URLWithString:self.target.urlString] density:1000];
+    NSInteger density=[[NSUserDefaults standardUserDefaults]integerForKey:DefaultSettingDensityKey];
+    [self gcdAsiGroupRequest:[NSURL URLWithString:self.target.urlString] density:density];
 }
 -(void)pauseBomb{
     
@@ -224,17 +229,28 @@
                 
             }});
       
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+        });
             }
     
-    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-    
-    dispatch_async(dispatch_get_main_queue(), ^{[self refreshLineChartView:timeCul/density];});
-    
-    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        finishedBombSecond++;
+        //[self refreshLineChartView:timeCul/density];
+        [self refreshAllBombViews:timeCul/density];
+    });
 
-    
 }
 
+
+-(void)refreshAllBombViews:(CGFloat)finishDuration{
+
+    NSString*format=@"Finihsed Bomb :%li / %li";
+    NSString*text=[NSString stringWithFormat:format,finishedBombSecond,bombSeconds];
+    bombStatusLabel.text=text;
+    
+    [self refreshLineChartView:finishDuration];
+}
 
 -(void)refreshLineChartView:(CGFloat)timeData{
     
@@ -247,6 +263,7 @@
     }
     
     [lineChartView setNeedsDisplay];
+    
     
     
 }
