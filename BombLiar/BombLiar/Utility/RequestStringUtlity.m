@@ -12,7 +12,7 @@
 
 +(NSString*)targetPageReuqustUrlString:(NSInteger)pageIndex pageSize:(NSInteger)pageSize{
     
-    return @"http://www.baidu.com";
+    return @"http://bombservice.sinaapp.com/TargetServlet";
 }
 
 @end

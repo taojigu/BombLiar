@@ -35,6 +35,8 @@
     NSAssert(0!=density, @"Invalidate density setting");
     
     densityTextField.text=[NSString stringWithFormat:@"%li",(long)density];
+
+    
     
 }
 

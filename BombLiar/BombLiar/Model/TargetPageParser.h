@@ -11,7 +11,10 @@
 
 @class ElementsContainer;
 
-@interface TargetPageParser : NSObject
+@interface TargetPageParser : NSObject{
+    @private
+    ElementsContainer*result;
+}
 
 
 -(ElementsContainer*)parse:(NSData*)data;

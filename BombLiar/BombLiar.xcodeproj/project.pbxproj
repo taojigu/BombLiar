@@ -36,6 +36,7 @@
 		9D27992618E90F0700881CEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D27992418E90F0700881CEB /* InfoPlist.strings */; };
 		9D27992818E90F0700881CEB /* BombLiarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27992718E90F0700881CEB /* BombLiarTests.m */; };
 		9D27993418E9105F00881CEB /* BombViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D27993318E9105F00881CEB /* BombViewController.m */; };
+		9D8E8BB3190DF6DC00922416 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8E8BB2190DF6DC00922416 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D084E18F5338600DDE531 /* TargetTableViewController.m */; };
 		9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085118F5383500DDE531 /* TargetDetailViewController.m */; };
 		9D9D085518F53D4D00DDE531 /* Target.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D9D085418F53D4D00DDE531 /* Target.m */; };
@@ -115,6 +116,8 @@
 		9D27992718E90F0700881CEB /* BombLiarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BombLiarTests.m; sourceTree = "<group>"; };
 		9D27993218E9105F00881CEB /* BombViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BombViewController.h; path = BombLiar/ViewController/BombViewController.h; sourceTree = "<group>"; };
 		9D27993318E9105F00881CEB /* BombViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BombViewController.m; path = BombLiar/ViewController/BombViewController.m; sourceTree = "<group>"; };
+		9D8E8BB1190DF6DC00922416 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GDataXMLNode.h; path = BombLiar/ThirdPart/Easy/GDataXMLNode.h; sourceTree = "<group>"; };
+		9D8E8BB2190DF6DC00922416 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDataXMLNode.m; path = BombLiar/ThirdPart/Easy/GDataXMLNode.m; sourceTree = "<group>"; };
 		9D9D084D18F5338600DDE531 /* TargetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetTableViewController.h; path = BombLiar/ViewController/TargetTableViewController.h; sourceTree = "<group>"; };
 		9D9D084E18F5338600DDE531 /* TargetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TargetTableViewController.m; path = BombLiar/ViewController/TargetTableViewController.m; sourceTree = "<group>"; };
 		9D9D085018F5383500DDE531 /* TargetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TargetDetailViewController.h; path = BombLiar/ViewController/TargetDetailViewController.h; sourceTree = "<group>"; };
@@ -154,10 +157,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D27715F18E96D04006985A4 /* libxml2.2.dylib in Frameworks */,
 				9D9D086E18FD183700DDE531 /* QuartzCore.framework in Frameworks */,
 				9D27716318E96D10006985A4 /* MobileCoreServices.framework in Frameworks */,
 				9D27716118E96D0A006985A4 /* CFNetwork.framework in Frameworks */,
-				9D27715F18E96D04006985A4 /* libxml2.2.dylib in Frameworks */,
 				9D27715D18E96CFE006985A4 /* libz.1.2.5.dylib in Frameworks */,
 				9D27715B18E96CF7006985A4 /* SystemConfiguration.framework in Frameworks */,
 				9D2798FC18E90F0700881CEB /* CoreGraphics.framework in Frameworks */,
@@ -182,6 +185,7 @@
 		9D27713918E9671B006985A4 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				9D8E8BB0190DF66900922416 /* Easy */,
 				9D27713A18E9672B006985A4 /* AsiHttpRequest */,
 			);
 			name = ThirdPart;
@@ -329,6 +333,15 @@
 				9D9D09101908B69500DDE531 /* BombSettingViewController.m */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		9D8E8BB0190DF66900922416 /* Easy */ = {
+			isa = PBXGroup;
+			children = (
+				9D8E8BB1190DF6DC00922416 /* GDataXMLNode.h */,
+				9D8E8BB2190DF6DC00922416 /* GDataXMLNode.m */,
+			);
+			name = Easy;
 			sourceTree = "<group>";
 		};
 		9D9D085618F5402100DDE531 /* Model */ = {
@@ -489,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D9D084F18F5338600DDE531 /* TargetTableViewController.m in Sources */,
+				9D8E8BB3190DF6DC00922416 /* GDataXMLNode.m in Sources */,
 				9D9D09111908B69500DDE531 /* BombSettingViewController.m in Sources */,
 				9D27715018E96A97006985A4 /* ASIDataCompressor.m in Sources */,
 				9D9D085218F5383500DDE531 /* TargetDetailViewController.m in Sources */,
@@ -651,6 +665,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BombLiar/BombLiar-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "BombLiar/BombLiar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -668,6 +687,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BombLiar/BombLiar-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "BombLiar/BombLiar-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

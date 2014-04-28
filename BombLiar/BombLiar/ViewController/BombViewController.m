@@ -204,10 +204,10 @@
 #pragma AsiHttpRequest delegate messages
 
 -(void)requestFinished:(ASIHTTPRequest *)request{
-    NSLog(@"The request %i finished,the Result is %@",request.tag,request.responseString );
+    NSLog(@"The request %li finished,the Result is %@",(long)request.tag,request.responseString );
 }
 -(void)requestFailed:(ASIHTTPRequest *)request{
-    NSLog(@"Failed request %i for reason:%@",request.tag,request.responseString);
+    NSLog(@"Failed request %li for reason:%@",(long)request.tag,request.responseString);
 }
 
 @end

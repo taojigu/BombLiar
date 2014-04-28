@@ -104,7 +104,6 @@
     
     [self asiSyncTest];
     return;
-    dispatch_queue_t testQueue=dispatch_queue_create("testQueue", nil);
     dispatch_queue_t mainQueue=dispatch_get_main_queue();
     //__weak ResponseTestViewController* weakSelf=self;
     dispatch_async(mainQueue, ^{
@@ -119,7 +118,7 @@
         NSData*data=[NSData dataWithContentsOfURL:testUrl];
         if (nil!=data) {
             NSTimeInterval endTime=[NSDate timeIntervalSinceReferenceDate];
-            NSString*dataString=[[NSString alloc]initWithData:data encoding:NSASCIIStringEncoding];
+           
             dispatch_async(dispatch_get_main_queue(), ^{
                 
                 labelResult.text=[NSString stringWithFormat:@"%f",endTime-time];

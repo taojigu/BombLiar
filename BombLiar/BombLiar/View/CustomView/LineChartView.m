@@ -175,6 +175,7 @@
     
     
     CGPoint lastPoint=CGPointMake(MAXFLOAT,MAXFLOAT);
+    [self.valuePointArray removeAllObjects];
     for (NSNumber* valueNum in self.valueArray) {
         CGFloat floatValue=[valueNum floatValue];
         CGFloat yPos=[self pointYPosition:floatValue];

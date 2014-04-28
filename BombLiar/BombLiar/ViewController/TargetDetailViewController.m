@@ -24,7 +24,7 @@
 
 @interface TargetDetailViewController (){
     @private
-    IBOutlet UIView*introductionView;
+    IBOutlet UITextView*introductionView;
     IBOutlet UIView*bombView;
     IBOutlet UIView*segmentedBackgroundView;
     IBOutlet UITableViewCell*liarWebCell;
@@ -84,6 +84,8 @@
     
     [bombButton setTitle:BombText forState:UIControlStateNormal];
     [bombButton setTitle:PauseBombText forState:UIControlStateSelected];
+    
+    introductionView.text=self.target.introduction;
     
     [self initChartView];
     
@@ -269,9 +271,9 @@
 }
 -(void)initChartView{
     
-    lineChartView.yTextArray=@[@"0",@"0.1",@"0.2",@"0.3",@"0.4",@"0.5",@"0.6",@"0.7",@"0.8"];
+    lineChartView.yTextArray=@[@"0",@"0.1",@"0.2",@"0.3",@"0.4",@"0.5",@"0.6",@"0.7",@"0.8",@"0.9"];
     NSMutableArray*yValueArray=[[NSMutableArray alloc]init];
-    for (NSInteger yIndex=0;yIndex<9;yIndex++) {
+    for (NSInteger yIndex=0;yIndex<10;yIndex++) {
         NSNumber*number=[NSNumber numberWithInteger:yIndex/10];
         [yValueArray addObject:number];
     }
@@ -280,7 +282,7 @@
     lineChartView.xStepLength=40;
     lineChartView.yStepLength=20;
     lineChartView.valueArray=self.timeValueArray;
-    lineChartView.maxValue=1;
+    lineChartView.maxValue=0.9;
     lineChartView.minValue=0;
 }
 
